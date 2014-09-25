@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="format-detection" content="email=no" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="Expires" content="0">
 
-    <link rel="stylesheet" href="css/mobile-new.css">
-    <link rel="stylesheet" href="css/mobile.css" />
-    <title>提问题</title>
-</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="email=no" />
 
-<body>
-    <form id="form1" name="form1" method="post" onsubmit="return checkform2()">
-        <div class="info_area question">
-            <ul class="nav-menus clearfix">
-                <li class="active">
-                    <a href="index.html" class="city"></a>
-                </li>
-                <li>
-                    <a href="message.html" class="message"></a>
-                </li>
-                <li>
-                    <a href="intro.html" class="intro"></a>
-                </li>
-            </ul>
+        <link rel="stylesheet" href="css/mobile-new.css">
+        <link rel="stylesheet" href="css/mobile.css" />
+        <title>我的问题</title>
+    </head>
 
-            <p>&nbsp;</p>
-            <h2>请输入提问人信息</h2>
+    <body>
+        <form id="form1" name="form1" method="post" onsubmit="return checkform()">
+            <div class="mb_pop_box form-band">
+            	<div id="step2_info">
+                	<input type="hidden" id="a1" name="a1" value="" />
+                	<p>我的问题: </p>
+                    <div class="clear"></div>
+                    <textarea id="tableshow" name="tableshow" maxlength="60" placeholder="请填写您要提问的内容"></textarea>
+                </div>
+                <a href="./index.html"><div class="step_change" style="margin-left:28px;">上一步</div></a>
+                <div class="step_change" id="go-next-step">下一步</div>
+            </div>
+        
+            <div class="question form-band hide">
+                <p class="p-city">
+                    <label>城市</label>
+                    <input type="text" name="city" maxlength="20" id="city" />
+                </p>
+                
+                <p class="p-university">
+                    <label>大学</label>
+                    <input type="text" name="university" id="university" maxlength="30" />
+                </p>
+                
+                <p class="p-user">
+                    <input type="text" name="name" id="name" maxlength="20" />
+                    <label>收</label>
+                </p>
+                
+                
+                <p class="p-email p-contact">
+                    <label>邮箱</label>
+                    <input type="text" name="email" id="email" maxlength="50" />
+                </p>
+                
+                <p class="p-cellphone p-contact">
+                    <label>手机号</label>
+                    <input type="text" name="mobile" id="mobile" maxlength="11"/>
+                </p>
+                
+                <p class="p-vcode p-contact">
+                    <label>验证码</label>
+                    <input type="text" name="valid" id="vcode" maxlength="8" class="input-short" />
+                    <button id="send-vcode" class="vcode-btn">发送验证码</button>
+                </p>
 
-            <label>姓名:</label>
-            <input type="text" name="name" maxlength="20" id="name" />
+                <div class="send_mail" onclick="$('#form1').submit()">提交</div>
 
-            <label>收信地址:</label>
-            <input type="text" name="address" id="address" maxlength="50" />
-
-            <label>大学:</label>
-            <input type="text" name="university" id="university" maxlength="50" />
-
-            <label>常用EMAIL:</label>
-            <input type="text" name="email" id="email" maxlength="50" />
-
-            <label>手机号:</label>
-            <input type="text" name="mobile" id="mobile" maxlength="11" class="mobile" />
-            <input type="button" value="发送验证码" id="send-vcode" class="vcode-btn">
-
-            <label>验证码:</label>
-            <input type="text" name="valid" id="vcode" maxlength="8" />
-
-            <label>问题内容:</label>
-            <textarea name="question" id="question" cols="30" rows="10" placeholder="请输入您的问题"></textarea>
-        </div>
-
-        <div class="send_mail" onclick="$('#form1').submit()">提交</div>
-
-        <input type="hidden" value="moblie" id="page" name="page" />
-        <input type="hidden" value="auckland" id="a1" name="a1" />
-        <input type="hidden" value="abc" id="tabletitle" name="tabletitle" />
-        <input type="hidden" value="" id="tableshow" name="tableshow" />
-        <input type="hidden" value="def" id="tablefrom" name="tablefrom" />
-    </form>
-
+                <input type="hidden" value="moblie" id="page" name="page" />
+                <input type="hidden" value="auckland" id="a1" name="a1" />
+                <input type="hidden" value="abc" id="tabletitle" name="tabletitle" />
+                <input type="hidden" value="" id="tableshow" name="tableshow" />
+                <input type="hidden" value="def" id="tablefrom" name="tablefrom" />
+            </div>
+        </form>
+    </body>
+    
     <script src="js/jquery.js"></script>
     <script src="js/question.js"></script>
-</body>
 </html>
